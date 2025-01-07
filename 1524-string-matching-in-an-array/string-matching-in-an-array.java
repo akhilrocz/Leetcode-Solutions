@@ -6,6 +6,7 @@ class Solution {
         for(int j=i+1;j<words.length;j++){
             if(words[j].contains(words[i])){
                 res.add(words[i]);
+                break;
             }
         }
     }
