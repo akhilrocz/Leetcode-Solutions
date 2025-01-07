@@ -1,13 +1,13 @@
 class Solution {
     public List<String> stringMatching(String[] words) {
        Set<String> res = new HashSet<>();
-    for(String word1:words){
-        for(String word2:words){
-            if(!word1.equals(word2) && word2.contains(word1)){
-                res.add(word1);
-                break;
+       Arrays.sort(words,Comparator.comparingInt(String::length));  //sort array by length
+    for(int i=0;i<words.length;i++){
+        for(int j=i+1;j<words.length;j++){
+            if(words[j].contains(words[i])){
+                res.add(words[i]);
             }
-        }   
+        }
     }
      return new ArrayList<>(res);
     }
