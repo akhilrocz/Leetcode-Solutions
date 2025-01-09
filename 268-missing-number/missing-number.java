@@ -2,12 +2,12 @@ class Solution {
     public int missingNumber(int[] nums) {
        int n = nums.length;
        int actualSum=0;
-       int exceptedSum=0;
+       int expetedSum=0;
        for(int num:nums){
         actualSum+=num;
        }
-       exceptedSum=n*(n+1)/2;
-       int res = exceptedSum-actualSum;
+       expetedSum=n*(n+1)/2;
+       int res = expetedSum-actualSum;
        return res;
         }
     }
