@@ -10,12 +10,13 @@ class Solution {
   set1.add(num);
    }
    for(int num:nums2){
-  set2.add(num);
+    if(set1.contains(num)){
+        set2.add(num);
+    }
    }
-   set1.retainAll(set2);  //intersection will store in set1
-   int[] res =new int[set1.size()];
+   int[] res =new int[set2.size()];
    int indx=0;
-   for(int num:set1){
+   for(int num:set2){
     res[indx++]=num;
    }
    return res;
