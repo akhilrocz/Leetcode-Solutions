@@ -5,6 +5,6 @@ class Solution {
             set.add(c);
         }
 
-        return set.size()==26?true:false;
+        return set.size()==26;
     }
 }
