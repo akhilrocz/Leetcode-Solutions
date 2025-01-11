@@ -12,6 +12,6 @@ class Solution {
                 num=num/10;
             }
         }
-        return Math.abs(elementSum-digitSum);
+        return Math.abs(elementSum-digitSum);  //elementSum always greater than digitSum
     }
 }
