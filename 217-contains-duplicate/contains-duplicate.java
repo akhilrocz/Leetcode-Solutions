@@ -7,7 +7,6 @@ class Solution {
            }
            hashMap.put(num,1);
         }
-        return false;
-       
+        return false;    
     }
 }
