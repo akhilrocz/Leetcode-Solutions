@@ -1,19 +1,14 @@
 class Solution {
     public String finalString(String s) {
-      String res="";
-      for(int i=0;i<s.length();i++)
-      {
-        if(s.charAt(i)!='i')
-        {
-            res+=s.charAt(i);
-        }else if(s.charAt(i)=='i'){
-            String x="";
-            for(int j=res.length()-1;j>=0;j--){
-            x+=res.charAt(j);
-            }
-            res=x;
+      StringBuilder res=new StringBuilder();
+      for(int i=0;i<s.length();i++){
+        char c=s.charAt(i);
+        if(c!='i'){
+            res.append(c);
+        }else if(c=='i'){
+            res.reverse();
         }
       }
-       return res;
+      return res.toString();
     }
 }
