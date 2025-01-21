@@ -4,5 +4,6 @@
  * @return {number}
  */
 var strStr = function(haystack, needle) {
-    return haystack.indexOf(needle);
+    const index= haystack.indexOf(needle);
+    return index!==-1?index:-1;
 };
