@@ -6,7 +6,8 @@ class Solution {
             String biStr = Integer.toBinaryString(x);
             sb.append(biStr).append("-");
         }
-        if(sb.length()>0) sb.deleteCharAt(sb.length()-1);
+        if (sb.length() > 0)
+            sb.deleteCharAt(sb.length() - 1);
         return sb.toString();
     }
 }
