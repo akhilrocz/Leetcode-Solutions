@@ -2,13 +2,19 @@
 class Solution {
     public int[] sortedSquares(int[] nums) {
         int[] resultArr = new int[nums.length];
-        for (int i = 0; i < nums.length; i++) {
-            resultArr[i] = Math.abs(nums[i]);
+        int leftPtr = 0;
+        int rightPtr = nums.length - 1;
+        for (int i = nums.length-1;i>=0;i--) {
+            if (nums[leftPtr] * nums[leftPtr] > nums[rightPtr] * nums[rightPtr]) {
+                resultArr[i] = nums[leftPtr] * nums[leftPtr];
+                leftPtr++;
+            } else {
+                resultArr[i] = nums[rightPtr] * nums[rightPtr];
+                rightPtr--;
+            }
         }
-        Arrays.sort(resultArr);
-        for (int i = 0; i < resultArr.length; i++) {
-            resultArr[i] = resultArr[i] * resultArr[i];
-        }
+
         return resultArr;
+
     }
 }
