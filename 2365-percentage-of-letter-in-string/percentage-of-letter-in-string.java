@@ -6,7 +6,6 @@ class Solution {
                 count++;
             }
         }
-
-        return count * 100 / s.length();
+        return (int) Math.floor((count * 100.0) / s.length());
     }
 }
