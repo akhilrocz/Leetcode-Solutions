@@ -9,10 +9,10 @@ class Solution {
                 maximumNUm = nums[i];
             }
         }
-
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] != maximumNUm && nums[i] < minimumNum) {
-                minimumNum=nums[i];
+        for(int num:nums){
+            if(num<minimumNum)
+            {
+                minimumNum = num;
             }
         }
 
