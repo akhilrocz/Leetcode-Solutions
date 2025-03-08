@@ -1,15 +1,18 @@
 class Solution {
     public int[] transformArray(int[] nums) {
         int[] res= new int[nums.length];
+        int evenIndex=0;
+        int oddIndex=nums.length-1;
         for(int i=0;i<nums.length;i++){
             if(nums[i]%2==0){
-                res[i]=0;
+                res[evenIndex++]=0;
             }else{
-                res[i]=1;
+                res[oddIndex--]=1;
             }
         }
 
-        Arrays.sort(res);
         return res;
+
+       
     }
 }
