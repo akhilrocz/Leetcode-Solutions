@@ -8,8 +8,7 @@ class Solution {
                     cnt++;
                 }
             }
-
-            res[i] = cnt;
+            res[i]=cnt;
         }
 
         return res;
