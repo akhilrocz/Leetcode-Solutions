@@ -3,9 +3,7 @@ class Solution {
         StringBuilder sb = new StringBuilder();
         if (n % 2 == 1) {
             sb.append("a".repeat(n));
-        }
-
-        else {
+        } else {
             sb.append("a".repeat(n - 1));
             sb.append("b");
         }
