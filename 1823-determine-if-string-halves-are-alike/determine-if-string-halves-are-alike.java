@@ -1,24 +1,25 @@
+import java.util.Set;
+import java.util.HashSet;
+
 class Solution {
     public boolean halvesAreAlike(String s) {
         int count1 = 0;
         int count2 = 0;
-        for (int i = 0; i < s.length() / 2; i++) {
-            if ((s.charAt(i) == 'a' || s.charAt(i) == 'e' || s.charAt(i) == 'i' || s.charAt(i) == 'o'
-                    || s.charAt(i) == 'u')
-                    || (s.charAt(i) == 'A' || s.charAt(i) == 'E' || s.charAt(i) == 'I' || s.charAt(i) == 'O'
-                            || s.charAt(i) == 'U')) {
-                count1++;
+        Set<Character> vowels = new HashSet<>(Set.of('a', 'e', 'i', 'o', 'u'));
+
+        int n = s.length();
+        for (int i = 0; i < n; i++) {
+            if (vowels.contains(Character.toLowerCase(s.charAt(i)))) {
+                if (i < n / 2) {
+                    count1++;
+                } else {
+                    count2++;
+                }
             }
         }
 
-        for (int j = s.length() / 2; j < s.length(); j++) {
-            if ((s.charAt(j) == 'a' || s.charAt(j) == 'e' || s.charAt(j) == 'i' || s.charAt(j) == 'o'
-                    || s.charAt(j) == 'u')
-                    || (s.charAt(j) == 'A' || s.charAt(j) == 'E' || s.charAt(j) == 'I' || s.charAt(j) == 'O'
-                            || s.charAt(j) == 'U')) {
-                count2++;
-            }
-        }
+        // The original logic incorrectly incremented count2 for non-vowels.
+        // We only need to compare the vowel counts of the two halves.
         return count1 == count2;
     }
 }
