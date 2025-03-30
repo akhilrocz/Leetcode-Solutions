@@ -1,3 +1,5 @@
+import java.util.Map;
+
 class Solution {
     public int reverseDegree(String s) {
         Map<Character, Integer> map = Map.ofEntries(
