@@ -13,12 +13,12 @@ class Solution {
                 } else if (op.equals("D")) {
                     if (!list.isEmpty()) {
                         // list.add(2 * list.size() - 1);
-                        list.add(2*list.get(list.size()-1));
+                        list.add(2 * list.get(list.size() - 1));
                     }
                 } else if (op.equals("+")) {
                     if (!list.isEmpty()) {
-                     int sum= list.get(list.size() - 1) + list.get(list.size() - 2);
-                     list.add(sum);
+                        int sum = list.get(list.size() - 1) + list.get(list.size() - 2);
+                        list.add(sum);
                     }
                 }
             }
