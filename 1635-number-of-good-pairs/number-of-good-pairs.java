@@ -1,14 +1,15 @@
-class Solution { // Time Complexity =>0(n) space complexity => 0(n)
+class Solution {
     public int numIdenticalPairs(int[] nums) {
-        int count=0;
-        for(int i=0;i<nums.length;i++){
+        int goodPairsCount=0;
+        for(int i=0;i<nums.length-1;i++){
             for(int j=i+1;j<nums.length;j++){
                 if(nums[i]==nums[j]){
-                    count++;
+                    goodPairsCount++;
                 }
             }
         }
 
-        return count;
+
+        return goodPairsCount;
     }
 }
