@@ -13,16 +13,18 @@ class Solution {
 
         //optimized
 
-        Map<Integer,Integer> map = new HashMap<>();
-        for(int i=0;i<numbers.length;i++){
-            int complement = target-numbers[i];
-            if(map.containsKey(complement)){
-                return new int[]{map.get(complement)+1,i+1};
+        int left=0;
+        int right = numbers.length-1;
+        while(left<right){
+            int mid = (left)+(right-left)/2;
+            if(numbers[left]+numbers[right]==target){
+                return new int[]{left+1,right+1};
+            }else if(numbers[left]+numbers[right]<target){
+                left++;
+            }else{
+                right--;
             }
-
-            map.put(numbers[i],i);
         }
-
-        return null;
+        return new int[0];
     }
 }
