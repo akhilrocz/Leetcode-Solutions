@@ -1,23 +1,12 @@
 class Solution {
-  public boolean isPalindrome(String s) {
-    String resultString = "";
-    for (char c : s.toCharArray()) {
-      if (Character.isLetter(c) || Character.isDigit(c)) { // Check for alphanumeric characters
-        resultString+=c; // Convert to uppercase for case-insensitivity
-      }
-    }
-    resultString = resultString.toUpperCase();
-    int left = 0;
-    int right = resultString.length() - 1;
+    public boolean isPalindrome(String s) {
+        String trimmedString = s.replaceAll("[^a-zA-Z0-9]","");
+        String loweredcaseStr =trimmedString.toLowerCase();
+        String rev ="";
+        for(int i=loweredcaseStr.length()-1;i>=0;i--){
+            rev+=loweredcaseStr.charAt(i);
+        }
 
-    while (left <= right) {
-      if (resultString.charAt(left) != resultString.charAt(right)) {
-        return false;
-      }
-      left++;
-      right--;
+        return rev.equals(loweredcaseStr);
     }
-
-    return true;
-  }
 }
