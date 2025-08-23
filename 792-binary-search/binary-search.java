@@ -3,16 +3,16 @@ class Solution {
         int left=0;
         int right = nums.length-1;
 
-        // if(nums.length==1){
-        //     int start =0;
-        //     int end=0;
-        //     int middle = start+(end)/2;
-        //     if(nums[middle]==target){
-        //       return middle;
-        //     }else{
-        //         return -1;
-        //     }
-        // }
+        if(nums.length==1){
+            int start =0;
+            int end=0;
+            int middle = start+(end-start)/2;
+            if(nums[middle]==target){
+              return middle;
+            }else{
+                return -1;
+            }
+        }
         
         while(left<=right){
             int mid = left+(right-left)/2;
