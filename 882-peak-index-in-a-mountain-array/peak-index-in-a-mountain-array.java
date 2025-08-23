@@ -11,6 +11,6 @@ class Solution {
             }
         }
 
-        return right;  //or right
+        return left;  //or right
     }
 }
