@@ -5,8 +5,8 @@ class Solution {
             map.put(c,map.getOrDefault(c,0)+1);
         }
 
-        int maxOdd= 0;
-        int minEven = s.length();
+        int maxOdd= Integer.MIN_VALUE;
+        int minEven = Integer.MAX_VALUE;
 
         for(Map.Entry<Character,Integer> entry:map.entrySet()){
             if(entry.getValue()%2!=0 && entry.getValue()>maxOdd)
