@@ -6,7 +6,7 @@ class Solution {
         }
 
         int maxOdd= 1;
-        int minEven = 998;
+        int minEven = 1000;
 
         for(Map.Entry<Character,Integer> entry:map.entrySet()){
             if(entry.getValue()%2!=0 && entry.getValue()>maxOdd)
