@@ -6,7 +6,7 @@ class Solution {
 
         Arrays.sort(arr);
 
-        long sum = 0;
+        int sum = 0;
         for (int i = k; i < n - k; i++) {
             sum += arr[i];
         }
