@@ -1,19 +1,14 @@
 class Solution {
     public int finalValueAfterOperations(String[] operations) {
-     int result=0;
-
-     for(String str:operations){
-        if(str.equals("--X")){
-            result--;
-        }else if(str.equals("X++")){
-            result++;
-        }else if(str.equals("++X")){
-            result++;
-        }else if(str.equals("X--")){
-            result--;
+        int X=0;
+        for(String op:operations){
+            if(op.contains("--")){
+                X--;
+            }else{
+                X++;
+            }
         }
-     }
 
-     return result;
+        return X;
     }
 }
