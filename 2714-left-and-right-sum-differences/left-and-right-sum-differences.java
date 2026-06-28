@@ -12,7 +12,7 @@ class Solution {
         leftSum[0] = 0;
         rightSum[n - 1] = 0;
 
-        for (int i = 1; i < nums.length; i++) {
+        for (int i = 1; i < n; i++) {
             leftSum[i]=nums[i-1]+leftSum[i-1];
         }
 
