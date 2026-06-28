@@ -1,13 +1,15 @@
-//Time complexity => 0(n)
-// Space Complexity =>0(1)
 class Solution {
     public int maxSubArray(int[] nums) {
-       int currentSum=0;
-       int subArrayMaxSum = Integer.MIN_VALUE;
-       for(int i=0;i<nums.length;i++){
-        currentSum=Math.max(nums[i],currentSum+nums[i]);
-        subArrayMaxSum=Math.max(currentSum,subArrayMaxSum);
-       }
-       return subArrayMaxSum;
+        int n = nums.length;
+        int currentMaxSum = 0;
+        int maxSum = Integer.MIN_VALUE;
+        if (n == 1)
+            return nums[0];
+        for (int i = 0; i < n; i++) {
+            currentMaxSum = Math.max(nums[i], currentMaxSum + nums[i]);
+            maxSum = Math.max(currentMaxSum, maxSum);
+        }
+
+        return maxSum;
     }
 }
