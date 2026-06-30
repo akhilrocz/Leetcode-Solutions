@@ -1,9 +1,10 @@
 class Solution {
     public String removeStars(String s) {
+        
         Deque<Character> stack = new ArrayDeque<>();
-        for (char c : s.toCharArray()) {
-            
-            if (!stack.isEmpty() && c == '*') {
+
+        for(char c:s.toCharArray()){
+            if(!stack.isEmpty() && c=='*'){
                 stack.pop();
             }else{
                 stack.push(c);
@@ -12,11 +13,14 @@ class Solution {
 
         StringBuilder sb = new StringBuilder();
 
-        while (!stack.isEmpty()) {
-            sb.append(stack.pop());
+        for(char ch:stack){
+            sb.append(ch);
         }
 
-        return sb.reverse().toString();
+        String re =sb.reverse().toString();
+
+        return re;
+        
 
     }
 }
