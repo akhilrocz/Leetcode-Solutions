@@ -12,9 +12,9 @@ class Solution {
 
         int index = 0;
 
-        for (int j = 0; j < n; j++) {
-            if (nums[j] != 0) {
-                res[index++] = nums[j];
+        for (int num:nums) {
+            if (num != 0) {
+                res[index++] = num;
             }
         }
 
