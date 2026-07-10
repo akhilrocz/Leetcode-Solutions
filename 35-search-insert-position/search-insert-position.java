@@ -18,6 +18,6 @@ class Solution {
             }
         }
 
-        return right+1 ;
+        return right+1;
     }
 }
