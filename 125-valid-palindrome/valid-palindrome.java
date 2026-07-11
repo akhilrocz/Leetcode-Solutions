@@ -1,12 +1,24 @@
 class Solution {
     public boolean isPalindrome(String s) {
-        String trimmedString = s.replaceAll("[^a-zA-Z0-9]","");
-        String loweredcaseStr =trimmedString.toLowerCase();
-        String rev ="";
-        for(int i=loweredcaseStr.length()-1;i>=0;i--){
-            rev+=loweredcaseStr.charAt(i);
+        if(s==" ") return true;
+       String trimmedStr =s.replaceAll("[^a-zA-Z0-9]","").toLowerCase();
+
+       int left=0;
+       int right =trimmedStr.length()-1;
+
+       //racecar
+
+       //abla
+
+       while(left<=right){
+        if(trimmedStr.charAt(left)!=trimmedStr.charAt(right)){
+           return false;
         }
 
-        return rev.equals(loweredcaseStr);
+        left++;
+        right--;
+       }
+
+       return true;
     }
 }
