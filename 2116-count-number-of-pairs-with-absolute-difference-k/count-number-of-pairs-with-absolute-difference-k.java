@@ -13,21 +13,27 @@ class Solution {
 
         // return count;
 
-        Map<Integer,Integer> map = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
 
-        int count=0;
+        int count = 0;
 
-        for(int i=0;i<nums.length;i++){
-            
-            if(map.containsKey(nums[i]-k)) {
-                count=count+map.get(nums[i]-k);
+        for (int i = 0; i < nums.length; i++) {
+
+            if(k==0){
+            if (map.containsKey(nums[i] - k)) {
+                count += map.get(nums[i] - k);
+            }
             }
 
-               if(map.containsKey(nums[i]+k)) {
-                count=count+map.get(nums[i]+k);
+             if (map.containsKey(nums[i] - k)) {
+                count += map.get(nums[i] - k);
             }
 
-            map.put(nums[i],map.getOrDefault(nums[i],0)+1);
+            if (map.containsKey(nums[i] + k)) {
+                count += map.get(nums[i] + k);
+            }
+
+            map.put(nums[i], map.getOrDefault(nums[i], 0) + 1);
 
         }
 
