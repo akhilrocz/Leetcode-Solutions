@@ -19,13 +19,13 @@ class Solution {
 
         for (int i = 0; i < nums.length; i++) {
 
-            if(k==0){
-            if (map.containsKey(nums[i] - k)) {
-                count += map.get(nums[i] - k);
-            }
+            if (k == 0) {
+                if (map.containsKey(nums[i])) {
+                    count += map.get(nums[i]);
+                }
             }
 
-             if (map.containsKey(nums[i] - k)) {
+            if (map.containsKey(nums[i] - k)) {
                 count += map.get(nums[i] - k);
             }
 
