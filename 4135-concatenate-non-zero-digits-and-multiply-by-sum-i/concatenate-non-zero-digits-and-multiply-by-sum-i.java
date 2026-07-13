@@ -1,24 +1,28 @@
 class Solution {
     public long sumAndMultiply(int n) {
-       String s = String.valueOf(n);
-       StringBuilder sb = new StringBuilder(); 
-       int sum=0;
-       for(char c:s.toCharArray()){
-        if(c!='0'){
-            sb.append(c);
-            sum+=c-'0';
+        if(n==0) return 0;
+        String s = String.valueOf(n);
+        StringBuilder sb = new StringBuilder();
+
+        for(char c:s.toCharArray()){
+            if(c!='0'){
+                sb.append(c);
+            }
         }
-       }
 
-       if(sb.length()==0) return 0;
+        String str = sb.toString();
+        long num = Long.parseLong(str);
 
-       String s1 = sb.toString();
+        long sum=0;
+        long temp=num;
 
-       Long val = Long.parseLong(s1);
+        while(temp>0){
+            long r = temp%10;
+            sum+=r;
+            temp/=10;
+        }
 
-       return sum*val;
+        return num*sum;
 
-
-       
     }
 }
