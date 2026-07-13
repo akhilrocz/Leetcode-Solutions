@@ -1,13 +1,20 @@
 class Solution {
     public int duplicateNumbersXOR(int[] nums) {
-     int xor=0;
-     Arrays.sort(nums);
-     for(int i=0;i<nums.length-1;i++){
-        if(nums[i]==nums[i+1]){
-            xor^=nums[i];
-        }
-     }
+        int xor=0;
+       Map<Integer,Integer> map = new HashMap<>();
+       for(int num:nums)
+       {
+        map.put(num,map.getOrDefault(num,0)+1);
+       }
 
-     return xor;
+       for(Map.Entry<Integer,Integer> entry:map.entrySet()){
+        if(entry.getValue()==2){
+            xor^=entry.getKey();
+        }
+       }
+
+       return xor;
+
+
     }
 }
