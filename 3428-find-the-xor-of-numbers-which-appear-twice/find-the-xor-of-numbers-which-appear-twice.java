@@ -5,11 +5,8 @@ class Solution {
        for(int num:nums)
        {
         map.put(num,map.getOrDefault(num,0)+1);
-       }
-
-       for(Map.Entry<Integer,Integer> entry:map.entrySet()){
-        if(entry.getValue()==2){
-            xor^=entry.getKey();
+        if(map.get(num)==2){
+            xor^=num;
         }
        }
 
