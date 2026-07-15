@@ -16,7 +16,7 @@ class Solution {
 
         int gcd = 1;
 
-        for (int k = 1; k <= sumOdd && k <= sumEven; k++) {
+        for (int k = 1; k <= sumOdd && k <= sumEven; ++k) {
             if (sumOdd % k == 0 && sumEven % k == 0) {
                 gcd = k;
             }
