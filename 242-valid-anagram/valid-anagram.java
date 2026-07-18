@@ -3,9 +3,9 @@ class Solution {
         Map<Character, Integer> map = new HashMap<>();
         Map<Character, Integer> map1 = new HashMap<>();
 
-        s=s.trim().replaceAll("\u20AC","");
+        s=s.trim().replaceAll("[^a-zA-Z]","");
 
-        t=t.trim().replaceAll("\u20AC","");
+        t=t.trim().replaceAll("[^a-zA-Z]","");
 
         if(s.length()!=t.length()) return false;
 
