@@ -1,7 +1,7 @@
 class Solution {
     public int findGCD(int[] nums) {
-        int smallestNumber =Integer.MAX_VALUE;
-        int largestNumber =Integer.MIN_VALUE;
+        int smallestNumber =1000;
+        int largestNumber =1;
 
         for(int num:nums){
             if(num<smallestNumber){
@@ -26,8 +26,5 @@ class Solution {
         }
 
         return gcd;
-
-
-
     }
 }
