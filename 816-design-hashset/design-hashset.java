@@ -1,9 +1,7 @@
 class MyHashSet {
- Set<Integer> set;
-  
-
+    Set<Integer> set;
     public MyHashSet() {
-         set=new HashSet<>();
+        set = new HashSet<>();
     }
     
     public void add(int key) {
@@ -11,13 +9,11 @@ class MyHashSet {
     }
     
     public void remove(int key) {
-        if(set.size()!=0){
-            set.remove(key);
-        }
+        set.remove(key);
     }
     
     public boolean contains(int key) {
-       return set.contains(key);
+        return set.contains(key);
     }
 }
 
