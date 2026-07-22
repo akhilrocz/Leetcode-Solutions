@@ -10,7 +10,7 @@ class Solution {
         }
 
         for(int key:map.keySet()){
-            if(key>0 && key>max && map.containsKey(-key)){
+            if(key>max && map.containsKey(-key)){
                 max=key;
             }
         }
