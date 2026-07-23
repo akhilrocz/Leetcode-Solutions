@@ -1,24 +1,18 @@
 class Solution {
     public int partitionString(String s) {
-      int result=1;
-      HashSet<Character> set = new HashSet<>();
-      for(char c:s.toCharArray()){
-
-      
-
-
-        if(set.contains(c)){
-            result++;
-            set.clear();
+        Set<Character> set = new HashSet<>();
+        int count=1;
+        for( char c:s.toCharArray()){
+            if(!set.add(c)){
+                set.clear();  
+                count++;  //1. //2. //3....
+                set.add(c); 
+            }else{
+            set.add(c);
+            }
+            
         }
 
-          set.add(c);
-
-        
-      }
-
-      return result;
-
-
+        return count;
     }
 }
