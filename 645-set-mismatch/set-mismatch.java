@@ -1,23 +1,26 @@
 class Solution {
     public int[] findErrorNums(int[] nums) {
-        int n = nums.length;
-        int actualSum = n * (n + 1) / 2;
-        int expectedSum = 0;
-        for (int i = 0; i < nums.length; i++) {
-            expectedSum += nums[i];
+       int n =nums.length;
+       int duplicate=-1;
+       int missing =-1;
+       for(int i=0;i<n;i++){
+        int num=Math.abs(nums[i]);
+        int index =num-1; //1
+        if(nums[index]<0){
+            duplicate=num;
+        }else{
+            nums[index]=nums[index]*-1;
         }
+       }
 
-        Set<Integer> set = new HashSet<>();
-        int duplicate = 0;
-        for (int num : nums) {
-            if (!set.add(num)) {
-                duplicate = num;
-            }
+       for(int j=0;j<n;j++){
+        if(nums[j]>0){
+           missing =j+1;
+           break;
         }
+       }
 
-        int missingNum = actualSum - (expectedSum - duplicate);
-
-        return new int[] { duplicate, missingNum };
+       return new int[]{duplicate,missing};
 
     }
 }
