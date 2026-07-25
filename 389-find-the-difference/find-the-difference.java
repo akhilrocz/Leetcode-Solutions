@@ -1,12 +1,23 @@
 class Solution {
     public char findTheDifference(String s, String t) {
-        int xor = 0;
-        for (char c : s.toCharArray()) {
-            xor ^= (int) c;
+
+        int[] count = new int[26];
+
+        for(char c:s.toCharArray()){
+            count[c-'a']++;
         }
-        for (char x : t.toCharArray()) {
-            xor ^= (int) x;
+
+        for(char c:t.toCharArray()){
+            count[c-'a']--;
         }
-        return (char) xor;
+
+        for(int i=0;i<26;i++){
+            if(count[i]!=0){
+                return (char) ('a'+i);
+            }
+        }
+
+        return ' ';
+
     }
 }
