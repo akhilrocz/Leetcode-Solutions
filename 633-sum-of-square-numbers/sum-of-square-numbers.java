@@ -6,7 +6,7 @@ class Solution {
         while (a <= b) {
             long sumOfsquares = (long) (a * a) + (b * b);
 
-            if (sumOfsquares == (long) c) {
+            if (sumOfsquares == c) {
                 return true;
             } else if (sumOfsquares < c) {
                 a++;
