@@ -1,15 +1,15 @@
 class Solution {
     public int numberOfSpecialChars(String word) {
-        Map<Character,Integer> map = new HashMap<>();
+        Set<Character> set = new HashSet<>();
 
         for(char c:word.toCharArray()){
-            map.put(c,map.getOrDefault(c,0)+1);
+            set.add(c);
         }
 
         int count=0;
 
-        for(char key:map.keySet()){
-            if(Character.isUpperCase(key) && map.containsKey(Character.toLowerCase(key))){
+        for(char c:set){
+            if(Character.isLowerCase(c) && set.contains(Character.toUpperCase(c)) ) {
                 count++;
             }
         }
