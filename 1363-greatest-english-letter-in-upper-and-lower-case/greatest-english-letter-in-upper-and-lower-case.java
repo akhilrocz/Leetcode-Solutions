@@ -16,10 +16,9 @@ class Solution {
         if(max==0){
             return "";
         }
-
-        String result = Character.toString(Character.toUpperCase((char) max));
-
-        return result;
+        
+        return Character.toString(Character.toUpperCase((char) max) );
+        
 
     }
 }
