@@ -1,24 +1,25 @@
 class Solution {
     public String greatestLetter(String s) {
-        Set<Character> set = new HashSet<>();
-        for(char c:s.toCharArray()){
-            set.add(c);
-        }
+        
+        boolean[] lowercase = new boolean[26];
 
-        int max =0;
+        boolean[] uppercase = new boolean[26];
 
-        for(char c:set){
-            if(Character.isLowerCase(c) && set.contains(Character.toUpperCase(c))) {
-                max = Math.max(max, (int)c);
+        for(char c:s.toCharArray()){ //0(n) TC
+            if(Character.isLowerCase(c)){
+                lowercase[c-'a']=true;
+            }else{
+                uppercase[c-'A']=true;
             }
         }
 
-        if(max==0){
-            return "";
+        for(int i=25;i>=0;i--){
+            if(lowercase[i] && uppercase[i]){
+                return String.valueOf((char) ('A'+i));  //65 +25=90 represents Z
+            }
         }
-        
-        return Character.toString(Character.toUpperCase((char) max) );
-        
+
+        return "";
 
     }
 }
