@@ -9,7 +9,7 @@ class Solution {
         int count=0;
 
         for(char c:set){
-            if(Character.isLowerCase(c) && set.contains(Character.toUpperCase(c)) ) {
+            if(Character.isLowerCase(c) && set.contains(Character.toUpperCase(c))){
                 count++;
             }
         }
