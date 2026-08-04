@@ -11,15 +11,9 @@ class Solution {
         List<Integer> result = new ArrayList<>();
 
         for(int num:nums){
-            if(num>max){
-                max=num;
-            }
-
-            if(num<min){
-                min=num;
-            }
-
-            set.add(num);
+           max = Math.max(max,num);
+           min = Math.min(min,num);
+           set.add(num);
         }
 
         for(int i=min;i<=max;i++){
