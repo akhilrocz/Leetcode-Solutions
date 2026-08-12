@@ -14,8 +14,8 @@ class Solution {
             }
         }
 
-        for(int j=0;j<n;j++){
-            set.add(nums[j]);
+        for(int num:nums){
+            set.add(num);
         }
 
         while(set.contains(totalSum)){
