@@ -6,11 +6,12 @@ class Solution {
         int totalCount = 0;
         int currentCount = 0;
         for (int i = 2; i < n; i++) {
-            if (nums[i] - nums[i - 1] == nums[i - 1] - nums[i - 2]) {
+            if (nums[i] - nums[i - 1] == nums[i - 1] - nums[i - 2]){
                 currentCount++;
-                totalCount += currentCount;
-            } else {
-                currentCount = 0;
+                totalCount+=currentCount;
+            }
+            else{
+                currentCount=0;
             }
         }
 
